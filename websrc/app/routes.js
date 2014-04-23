@@ -20,7 +20,7 @@ define(['app'], function(app) {
 
                             },
 
-                            templateUrl: '/views/home.html'
+                            templateUrl: '/views/home.html?v=' + window.appVersion
 
                         })
 
@@ -34,7 +34,7 @@ define(['app'], function(app) {
 
                             },
 
-                            templateUrl: '/views/about.html'
+                            templateUrl: '/views/about.html?v=' + window.appVersion
 
                         })
 

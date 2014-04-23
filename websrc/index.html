@@ -5,14 +5,18 @@
     <base href="/"/>
     <title>Single Page Application Development</title>
 
+
+
     <!--start DEV imports-->
     <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript">window.appVersion = '0.0.0';</script>
     <script src="/app/lib/requirejs/require.js" data-main="app/config"></script>
     <!--end DEV imports-->
 
     <!--start PROD imports
-    <link rel="stylesheet" href="/css/screen.css">
-    <script src="/js/scripts.js"></script>
+    <script type="text/javascript">window.appVersion = '{{appVersion}}' || '0.0.0';</script>
+    <link rel="stylesheet" href="/css/screen.css?v={{appVersion}}">
+    <script src="/js/scripts.js?v={{appVersion}}"></script>
     end PROD imports-->
 
 </head>

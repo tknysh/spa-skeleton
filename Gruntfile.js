@@ -104,6 +104,10 @@ module.exports = function(grunt) {
                 src: ['public/index.html'],
                 actions: [
                     {
+                        search: '{{appVersion}}',
+                        replace: '<%= pkg.version %>'
+                    },
+                    {
                         search: '<!--start PROD imports',
                         replace: ''
                     },
@@ -121,24 +125,6 @@ module.exports = function(grunt) {
                         flags: 'img'
                     }
                 ]
-            },
-            config: {
-                src: ['websrc/.tmp/scripts.js'],
-                actions: [
-                    {
-                        search: /\/\* START PROD CONFIG/,
-                        replace: ''
-                    },
-                    {
-                        search: /END PROD CONFIG \*\//,
-                        replace: ''
-                    },
-                    {
-                        search: '// START DEV CONFIG(.*?(\n))+.*?// END DEV CONFIG',
-                        replace: '',
-                        flags: 'img'
-                    }
-                ]
             }
         },
         clean: {
@@ -149,8 +135,8 @@ module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('build:prod',['clean:release', 'compass:watch', 'requirejs', 'concat:js', 'concat:css', 'regex-replace:config', 'uglify', 'copy:main', 'regex-replace:inline', 'clean:build']);
-    grunt.registerTask('build:prod:dev',['clean:release', 'compass:watch', 'requirejs', 'concat:js', 'concat:css', 'regex-replace:config', 'copy:main', 'copy:dev', 'regex-replace:inline', 'clean:build']);
+    grunt.registerTask('build:prod',['clean:release', 'compass:watch', 'requirejs', 'concat:js', 'concat:css', 'uglify', 'copy:main', 'regex-replace:inline', 'clean:build']);
+    grunt.registerTask('build:prod:dev',['clean:release', 'compass:watch', 'requirejs', 'concat:js', 'concat:css', 'copy:main', 'copy:dev', 'regex-replace:inline', 'clean:build']);
     grunt.registerTask('cleanup', ['clean:release']);
     grunt.registerTask('watch:compass', ['watch']);
 
