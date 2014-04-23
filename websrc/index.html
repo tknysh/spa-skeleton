@@ -3,9 +3,18 @@
 <head lang="en">
     <meta charset="UTF-8">
     <base href="/"/>
-    <title>Single Page Application</title>
+    <title>Single Page Application Development</title>
+
+    <!--start DEV imports-->
     <link rel="stylesheet" href="css/style.css"/>
     <script src="/app/lib/requirejs/require.js" data-main="app/config"></script>
+    <!--end DEV imports-->
+
+    <!--start PROD imports
+    <link rel="stylesheet" href="/css/screen.css">
+    <script src="/js/scripts.js"></script>
+    end PROD imports-->
+
 </head>
 <body>
     <section ui-view></section>
