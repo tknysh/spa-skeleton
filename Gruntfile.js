@@ -143,7 +143,7 @@ module.exports = function(grunt) {
         },
         clean: {
             build: ["websrc/.tmp"],
-            release: ["production"]
+            release: ["public"]
         }
     });
 
