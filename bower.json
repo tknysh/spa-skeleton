@@ -1,0 +1,25 @@
+{
+    "name": "spa-skeleton",
+    "version": "0.0.1",
+    "homepage": "https://github.com/tknysh/spa-skeleton",
+    "authors": [
+        "tknysh <tknysh.ua@gmail.com>"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "websrc/app/lib",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "~1.2.16",
+        "angular-ui-router": "~0.2.10",
+        "angular-resource": "~1.2.16",
+        "requirejs": "~2.1.11",
+        "requirejs-domready": "~2.0.1"
+    }
+}
