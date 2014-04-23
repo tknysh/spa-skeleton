@@ -1,5 +1,6 @@
 define('controllers/HomeCtrl', [
-    'controllers/controllers'
+    'controllers/controllers',
+    'services/EventService'
     ],
     function(controllers) {
 
@@ -7,10 +8,19 @@ define('controllers/HomeCtrl', [
 
         .controller('HomeCtrl', [
             '$scope',
-            function($scope) {
+            'eventsData',
+            function($scope, eventsData) {
 
             $scope.content = "Home Page Content";
+            $scope.events = eventsData;
 
         }])
+
+        .factory('EventsData', ['EventsLoader', function(EventsLoader) {
+
+            //return EventsLoader();
+            return [];
+
+        }]);
 
 });

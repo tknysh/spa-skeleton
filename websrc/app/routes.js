@@ -17,7 +17,7 @@ define(['app'], function(app) {
                             controller: 'HomeCtrl',
 
                             resolve: {
-
+                                eventsData: 'EventsData'
                             },
 
                             templateUrl: '/views/home.html?v=' + window.appVersion

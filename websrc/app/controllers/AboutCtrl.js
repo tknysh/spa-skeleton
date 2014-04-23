@@ -1,6 +1,5 @@
 define('controllers/AboutCtrl', [
-        'controllers/controllers',
-        'services/SomeService'
+        'controllers/controllers'
     ],
     function(controllers) {
 
@@ -8,8 +7,7 @@ define('controllers/AboutCtrl', [
 
             .controller('AboutCtrl', [
                 '$scope',
-                'SomeService',
-                function($scope, SomeService) {
+                function($scope) {
 
                     $scope.content = "About Us Page Content";
 
